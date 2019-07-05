@@ -142,6 +142,7 @@ int main(void)
 	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
 
+	glfwSwapInterval(1); // Add a limit to frame rate
 	
 	if (glewInit() != GLEW_OK) std::cout << "Error!" << std::endl;
 
@@ -178,14 +179,41 @@ int main(void)
 	unsigned int shader = CreateShader(source.VertexSource, source.FragmentSource);
 	GLCALL(glUseProgram(shader));
 
+	/**
+	 * Link the uniform with owr shader and set the location of the uniform variable
+	 */
+	GLCALL(int location = glGetUniformLocation(shader, "u_Color"));
+	ASSERT(location != -1);
+	
+	/**
+	 * Add RGB atribute
+	 */
+	glUniform4f(location, 0.2f, 0.3f, 0.8f, 1.0f);
+	
+	float r = 0.0f;
+	float increment = 0.05f;
+
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(window))
 	{
 		/* Render here */
 		glClear(GL_COLOR_BUFFER_BIT);
+
+		glUniform4f(location, r, 0.3f, 0.8f, 1.0f);
 		
 		GLCALL(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
 		
+		/**
+		 * Add an animation 
+		 */
+		if(r > 1.0f)
+			increment = -0.05f;
+		else 
+			if(r < 0.0f)
+				increment = +0.05f;
+
+		r += increment;
+
 		/* Swap front and back buffers */
 		glfwSwapBuffers(window);
 
