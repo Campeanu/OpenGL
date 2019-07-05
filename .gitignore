@@ -1,0 +1,8 @@
+# Directories
+.vs/
+/x64
+/OpenGL/x64
+/vendor
+
+# Files
+*.user
