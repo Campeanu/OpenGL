@@ -4,7 +4,7 @@
 class IndexBuffer {
 public:
     IndexBuffer(const unsigned int* data, unsigned int count);
-    ~IndexBuffer();
+    virtual ~IndexBuffer();
     
     void Bind() const;
     void Unbind() const;

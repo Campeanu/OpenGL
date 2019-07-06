@@ -12,6 +12,9 @@
 #include "VertexBuffer.hpp"
 #include "IndexBuffer.hpp"
 
+#include "VertexArray.hpp"
+#include "VertexBufferLayout.hpp"
+
 /**
  * The use of this structure is for function ShaderProgramSource to be able tu return 2 strings 
  */
@@ -150,10 +153,12 @@ int main(void)
 		/**
 		 * VertexBuffer Abstraction
 		 */
+		VertexArray va;
 		VertexBuffer vb(position, 4 * 2 * sizeof(float));
 
-		GLCALL(glEnableVertexAttribArray(0));
-		GLCALL(glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0));
+		VertexBufferLayout layout;
+		layout.Push<float>(2);
+		va.AddBuffer(vb, layout);
 
 		/**
 		 * IndexBuffer Abstraction
@@ -195,7 +200,7 @@ int main(void)
 			GLCALL(glUseProgram(shader));
 			glUniform4f(location, r, 0.3f, 0.8f, 1.0f);
 
-			GLCALL(glBindVertexArray(vao));
+			va.Bind();
 			ib.Bind();
 
 			GLCALL(glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_INT, nullptr));
