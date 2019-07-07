@@ -5,6 +5,11 @@
 
 #include <iostream>
 
+#include "Shader.hpp"
+#include "VertexArray.hpp"
+#include "IndexBuffer.hpp"
+#include "VertexBuffer.hpp"
+
 #define ASSERT(x) if (!(x)) __debugbreak();
 #define GLCALL(x) GLClearError();\
 	x;\
@@ -19,5 +24,13 @@ void GLClearError();
  * Managing OpenGL errors 
  */
 bool GLLogCall(const char* function, const char* file, int line);
+
+class Renderer {
+public:
+	void Clear();
+	void Draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader);	
+
+private:
+};
 
 #endif // !__RENDERER_HPP_INCLUDED__

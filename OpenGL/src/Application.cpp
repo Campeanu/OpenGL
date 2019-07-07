@@ -84,21 +84,19 @@ int main(void)
 
 		std::cout << glGetString(GL_VERSION) << std::endl;
 
+		Renderer renderer;
+
 		while (!glfwWindowShouldClose(window))
 		{
-			GLCALL(glClear(GL_COLOR_BUFFER_BIT));
+			renderer.Clear();
 
 			shader.Bind();
 			shader.SetUniform4f("u_Color", r, 0.3f, 0.8f, 1.0f);
 
-			va.Bind();
-			ib.Bind();
+			renderer.Draw(va, ib, shader);
 
 			GLCALL(glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_INT, nullptr));
 
-			/**
-			 * Add an animation
-			 */
 			if (r > 1.0f)
 				increment = -0.05f;
 			else
@@ -107,12 +105,10 @@ int main(void)
 
 			r += increment;
 
-			/* Swap front and back buffers */
 			glfwSwapBuffers(window);
-
-			/* Poll for and process events */
 			glfwPollEvents();
 		}
 	}
+
 	glfwTerminate(); 
 }

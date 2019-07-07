@@ -4,7 +4,6 @@
 #include <GL/glew.h> // Always GLEW should be included before GLFW
 #include <vector>
 
-
 #include "Renderer.hpp"
 
 struct VertexBufferElement

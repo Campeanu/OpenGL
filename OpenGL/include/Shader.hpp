@@ -1,14 +1,11 @@
 #ifndef __SHADER_HPP_INCLUDED__
 #define __SHADER_HPP_INCLUDED__
 
-
 #include <fstream>
 #include <string>
 #include <sstream>
 #include <string>
 #include <unordered_map>
-
-#include "Renderer.hpp"
 
 struct ShaderProgramSources
 {

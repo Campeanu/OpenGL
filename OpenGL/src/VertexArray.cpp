@@ -1,4 +1,6 @@
 #include "VertexArray.hpp"
+#include "VertexBufferLayout.hpp"
+
 
 VertexArray::VertexArray()
 {
