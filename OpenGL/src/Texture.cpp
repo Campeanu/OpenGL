@@ -1,7 +1,7 @@
 #include "Texture.hpp"
 
 #define STB_IMAGE_IMPLEMENTATION
-#include "vendor/stdImage/stbImage.hpp"
+#include "stdImage/stbImage.hpp"
 
 Texture::Texture(const std::string& path)
     : m_RendererID { 0    },
