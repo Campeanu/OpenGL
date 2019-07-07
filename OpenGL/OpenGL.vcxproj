@@ -13,6 +13,8 @@
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\Texture.cpp" />
+    <ClCompile Include="src\vendor\stdImage\stbImage.cpp" />
     <ClCompile Include="src\VertexBufferLayout.cpp" />
     <ClCompile Include="src\IndexBuffer.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
@@ -24,11 +26,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Shader.hpp" />
+    <ClInclude Include="include\Texture.hpp" />
     <ClInclude Include="include\VertexBufferLayout.hpp" />
     <ClInclude Include="include\IndexBuffer.hpp" />
     <ClInclude Include="include\Renderer.hpp" />
     <ClInclude Include="include\VertexArray.hpp" />
     <ClInclude Include="include\VertexBuffer.hpp" />
+    <ClInclude Include="src\vendor\stdImage\stbImage.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\img\texture.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
