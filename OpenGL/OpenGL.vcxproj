@@ -12,9 +12,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\GUI\imgui_impl_glfw.cpp" />
+    <ClCompile Include="src\GUI\imgui_impl_opengl3.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Texture.cpp" />
     <ClCompile Include="src\vendor\glm\detail\glm.cpp" />
+    <ClCompile Include="src\vendor\imgui\imgui.cpp" />
+    <ClCompile Include="src\vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="src\vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="src\vendor\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\vendor\stdImage\stbImage.cpp" />
     <ClCompile Include="src\VertexBufferLayout.cpp" />
     <ClCompile Include="src\IndexBuffer.cpp" />
@@ -165,6 +171,8 @@
     <ClInclude Include="include\Renderer.hpp" />
     <ClInclude Include="include\VertexArray.hpp" />
     <ClInclude Include="include\VertexBuffer.hpp" />
+    <ClInclude Include="src\GUI\imgui_impl_glfw.h" />
+    <ClInclude Include="src\GUI\imgui_impl_opengl3.h" />
     <ClInclude Include="src\vendor\glm\common.hpp" />
     <ClInclude Include="src\vendor\glm\detail\compute_common.hpp" />
     <ClInclude Include="src\vendor\glm\detail\compute_vector_relational.hpp" />
@@ -406,6 +414,12 @@
     <ClInclude Include="src\vendor\glm\vec3.hpp" />
     <ClInclude Include="src\vendor\glm\vec4.hpp" />
     <ClInclude Include="src\vendor\glm\vector_relational.hpp" />
+    <ClInclude Include="src\vendor\imgui\imconfig.h" />
+    <ClInclude Include="src\vendor\imgui\imgui.h" />
+    <ClInclude Include="src\vendor\imgui\imgui_internal.h" />
+    <ClInclude Include="src\vendor\imgui\imstb_rectpack.h" />
+    <ClInclude Include="src\vendor\imgui\imstb_textedit.h" />
+    <ClInclude Include="src\vendor\imgui\imstb_truetype.h" />
     <ClInclude Include="src\vendor\stdImage\stbImage.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -454,8 +468,8 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\DEV\OpenGL\OpenGL\vendor\GLEW\include;C:\DEV\OpenGL\OpenGL\vendor\GLFW\include;C:\DEV\OpenGL\OpenGL\OpenGL\include;C:\DEV\OpenGL\OpenGL\OpenGL\src\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\DEV\OpenGL\OpenGL\vendor\GLEW\include;C:\DEV\OpenGL\OpenGL\vendor\GLFW\include;C:\DEV\OpenGL\OpenGL\OpenGL\include;C:\DEV\OpenGL\OpenGL\OpenGL\src\vendor;C:\DEV\OpenGL\OpenGL\OpenGL\src\vendor\imgui;C:\DEV\OpenGL\OpenGL\OpenGL\src\GUI;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC;IMGUI_IMPL_OPENGL_LOADER_GLEW;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -471,8 +485,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\DEV\OpenGL\OpenGL\vendor\GLEW\include;C:\DEV\OpenGL\OpenGL\vendor\GLFW\include;C:\DEV\OpenGL\OpenGL\OpenGL\include;C:\DEV\OpenGL\OpenGL\OpenGL\src\vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\DEV\OpenGL\OpenGL\vendor\GLEW\include;C:\DEV\OpenGL\OpenGL\vendor\GLFW\include;C:\DEV\OpenGL\OpenGL\OpenGL\include;C:\DEV\OpenGL\OpenGL\OpenGL\src\vendor;C:\DEV\OpenGL\OpenGL\OpenGL\src\vendor\imgui;C:\DEV\OpenGL\OpenGL\OpenGL\src\GUI;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC;IMGUI_IMPL_OPENGL_LOADER_GLEW;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
